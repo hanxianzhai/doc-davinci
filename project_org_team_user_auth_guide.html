@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>用户与权限体系 - Davinci 0.3 Documentation</title>
+        
+
+        
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+        <link rel="stylesheet" href="css/pygments-default.css">
+
+        <!-- Google analytics script -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-32518208-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-fixed-top" id="topbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="brand" style="width:200px;"/><a href="index.html">
+                      <img src="img/logo.svg" style="width:130px; height:48px;margin-left: 25px;"/></a>
+                      <!-- <span class="version">0.3</span> -->
+                    </div>
+                    <ul class="nav">
+                        <li><a href="index.html">概述</a></li>
+                        <li><a href="quickStart.html">快速开始</a></li>
+
+                        <li class="dropdown">
+                            <a href="project_org_team_user_auth_guide.html#" class="dropdown-toggle" data-toggle="dropdown">使用教程<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="concept.html">基本概念</a></li>
+                                <li><a href="project_org_team_user_auth_guide.html">用户与权限体系</a></li>
+                                <li><a href="source_guide.html">数据源管理</a></li>
+                                <li><a href="view_guide.html">数据视图管理</a></li>
+                                <li><a href="widget_guide.html">可视组件管理</a></li>
+                                <li><a href="dashboard_guide.html">仪表板管理</a></li>
+                                <li><a href="display_guide.html">大屏管理</a></li>
+                                <li><a href="schedule_guide.html">定时任务管理</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="integration_guide.html">集成整合</a></li>
+                        <li class="dropdown">
+                            <a href="project_org_team_user_auth_guide.html#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="FAQ.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-wrapper">
+            <div class="content" id="content">
+                
+                    <h1 class="title">用户与权限体系</h1>
+                
+
+                <p>Davinci 0.3 引入了一种新的用户体系和权限体系。在设计上，我们运用了“去中心化”的思想，每个用户都能自配一套完整的组织架构层级结构，任何一个注册用户都既可以是管理员，也可以是普通用户。实现了更加开放化、扁平化、平等化、多元化的系统现象和体系结构。</p>
+
+<h3 id="1-组织管理">1 组织管理</h3>
+
+<p>用户注册并通过邮箱激活进入系统，系统为该用户创建一个默认组织。该用户为默认组织的 Owner 角色。组织有 Owner（拥有者） 和 Member（普通成员） 两种角色，Owner 拥有对组织的所有权限，可邀请其他用户进入该组织协同工作，Member 是协同工作的参与者。</p>
+
+<ul>
+  <li>
+    <p>点击右上角图标，选择“用户设置”。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/user_org_init.png" alt="user_org_init" /></p>
+  </li>
+  <li>
+    <p>选择“我的组织”，查看组织列表。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/user_org_list.png" alt="user_org_list" /></p>
+  </li>
+  <li>
+    <p>用户可创建若干个组织，满足其他业务需求。点击右上角“+”，弹框创建。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/user_org_add.png" alt="user_org_add" /></p>
+  </li>
+</ul>
+
+<h4 id="11-项目">1.1 项目</h4>
+
+<p>Davinci 0.3 引入了“项目”的概念，项目从属于组织。每个项目都是独立的 Davinci 应用， Davinci 应用由 Viz， Widget，View， Source， Schedule 几个模块组成。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/user_org_enter_pro.png" alt="user_org_enter_pro" /></p>
+
+<ul>
+  <li>
+    <p>编辑和删除项目。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/image-20181112173239996.png" alt="image-20181112173239996" /></p>
+  </li>
+  <li>
+    <p>点赞项目，单击数字，查看点赞用户的详细信息。再次点击取消点赞。</p>
+  </li>
+</ul>
+
+<h4 id="12-成员">1.2 成员</h4>
+
+<p>组织成员有 Owner 和 Member 两种角色，Owner 可以提升 Member 为 Owner，一个组织允许有多个 Owner，他们的权限相同。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/user_org_member.png" alt="user_org_member" /></p>
+
+<ul>
+  <li>
+    <p>Owner 邀请注册用户加入自己的组织协同工作（被邀请人需要进入邮箱接受邀请），被邀请人为该组织的 Member 角色。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/user_org_add_member.png" alt="user_org_add_member" /></p>
+  </li>
+</ul>
+
+<h4 id="13-设置">1.3 设置</h4>
+
+<p>Owner 能给组织上传图像，编辑组织信息或删除组织。Owner 可以决定是否允许组织的 Member 创建项目，也可以决定组织的 Member 是只可见公开项目，还是不可见任何项目。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/user_org_setting.png" alt="user_org_pro" /></p>
+
+<h3 id="2-团队与权限管理">2 团队与权限管理</h3>
+
+<p>Davinci 0.3 是通过团队来管理项目，团队从属于组织。团队有 Maintainer（维护者）和 Member（普通成员）两个角色。通过下图来看四种不同角色的权限。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_global_relation.png" alt="project_global_relation" /></p>
+
+<p>团队可以是级联结构，能对接企业组织架构。一个组织能有多个 Team 树，组织相当于根节点的概念，但不属于树。一个用户能同时属于多个团队。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_org_team_list.png" alt="project_org_team_list" /></p>
+
+<p>组织下创建团队。弹框选择上级 Team，保存。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_org_add_team.png" alt="project_org_team_list" /></p>
+
+<h4 id="21-成员">2.1 成员</h4>
+
+<p>团队成员分为 Maintainer 和 Member。团队的创建者默认为团队的 Maintainer，Maintainer 是团队的管理者，可邀请组织成员加入 Team 协同工作，也可以分配组织的项目到当前 Team，Member 是协同工作的参与者。</p>
+
+<ul>
+  <li>
+    <p>Maintainer 能移除团队里的所有人，也能改变团队所有人的角色。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/user_team_member.png" alt="user_team_member" /></p>
+  </li>
+  <li>
+    <p>Maintainer 添加成员到自己所在的团队。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/project_team_maintainer_add.png" alt="project_team_maintainer_add" /></p>
+  </li>
+</ul>
+
+<h4 id="22-项目">2.2 项目</h4>
+
+<p>团队的 Maintainer 分配项目到团队，通过团队管理项目的模块权限和数据权限。一个项目能被分配到多个团队，普通成员通过团队参与项目。</p>
+
+<p><strong>添加项目到当前团队</strong></p>
+
+<p><img src="https://edp963.github.io/davinci/img/user_team_add_pro.png" alt="user_team_add_pro" /></p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_team_add_pro1.png" alt="project_team_add_pro" /></p>
+
+<p><strong>模块权限</strong></p>
+
+<p>模块权限指的是允许或拒绝团队的普通用户使用 Davinci 应用提供的某个/些模块。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_team_add_pro2.png" alt="project_team_add_pro" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>设置项</th>
+      <th>团队 Maintainer 对 Member 授权</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>隐藏</td>
+      <td>不可见</td>
+    </tr>
+    <tr>
+      <td>只读</td>
+      <td>只有查看权限</td>
+    </tr>
+    <tr>
+      <td>编辑</td>
+      <td>只有查看和修改权限</td>
+    </tr>
+    <tr>
+      <td>删除</td>
+      <td>拥有所有操作权限</td>
+    </tr>
+    <tr>
+      <td>允许</td>
+      <td>允许分享/下载</td>
+    </tr>
+    <tr>
+      <td>禁止</td>
+      <td>禁止分享/下载</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>例如：按上图对 “test_project” 项目进行配置，那么，该团队里的普通成员对该项目的 Widget 不可见，对 Viz 只能查看，不能新建、编辑、删除或复制，对 Source 能查看和修改，对 View 和 Schedule 拥有所有的权限，不能分享 Widget/ Dashboard/Display，能下载 CSV 文件。</p>
+
+<p><strong>数据权限</strong></p>
+
+<p>数据权限指的是允许或拒绝团队普通成员访问某个/些数据。</p>
+
+<p>由 <code class="highlighter-rouge">team@var</code> 变量来控制团队的数据权限，配置参看 3.5.2 “<strong>配置视图</strong>”的“<strong>团队数据权限控制</strong>”部分。</p>
+
+<h4 id="23-团队">2.3 团队</h4>
+
+<p>团队的 Maintainer 能在当前团队里创建子团队。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_team_add_team.png" alt="project_team_add_team" /></p>
+
+<h4 id="24-设置">2.4 设置</h4>
+
+<p>编辑和删除当前团队。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_team_setting.png" alt="project_team_setting" /></p>
+
+<h3 id="3-项目管理">3 项目管理</h3>
+
+<p>登录系统，首页是该用户在不同组织中项目的快捷入口，主要由“我创建的项目”和“我参与的项目”组成，你能从这里快速定位并进入某个项目，操作 Source、View、Widget、Viz、Schedule 功能。项目的创建者拥有操作该项目的所有权限。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/project_project_add.png" alt="project_project_add" /></p>
+
+<h4 id="31-创建项目">3.1 创建项目</h4>
+
+<ul>
+  <li>
+    <p>弹框中选择项目所属的组织和项目的可见性。项目可见性设置与组织设置相关联，只有当项目为“公开”、组织的 Owner 设置成员对项目的权限为“只可见公开”时，组织的 Member 成员才能查看公开的项目。</p>
+
+    <p>你也可以在“我的组织”页创建项目。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/project_project_add_modal.png" alt="project_project_daa_modal" /></p>
+  </li>
+</ul>
+
+<h4 id="32-移交编辑删除项目">3.2 移交、编辑、删除项目</h4>
+
+<ul>
+  <li>
+    <p>分别点击右上角的按钮。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/porject_project_action.png" alt="porject_project_action" /></p>
+  </li>
+  <li>
+    <p>组织的 Owner 能把项目移交给其他组织。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/project_project_move.png" alt="project_project_move" /></p>
+  </li>
+</ul>
+
+<h4 id="33-收藏搜索项目">3.3 收藏、搜索项目</h4>
+
+<ul>
+  <li>
+    <p>收藏类似于快照功能，对项目进行在线备份与恢复，同时给用户提供另一个访问项目的通道。</p>
+
+    <p>点击“收藏”，项目被添加到“我收藏的项目”中，再次点击取消收藏，也可以在“我收藏的项目”中点击“取消收藏”。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/project_project_collect.png" alt="project_project_collect" /></p>
+  </li>
+  <li>
+    <p>输入项目名称，快捷搜索并进入项目中。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/project_project_search.png" alt="project_project_search" /></p>
+  </li>
+</ul>
+
+<h3 id="4-用户设置">4 用户设置</h3>
+
+<h4 id="41-修改和查看个人信息">4.1 修改和查看个人信息</h4>
+
+<p><img src="https://edp963.github.io/davinci/img/project_information_edit.png" alt="project_information_edit" /></p>
+
+<h4 id="42-修改密码">4.2 修改密码</h4>
+
+<p><img src="https://edp963.github.io/davinci/img/project_password_edit.png" alt="project_password_edit" /></p>
+
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.8.0.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/anchor.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

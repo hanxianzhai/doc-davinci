@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>第一个应用 - Davinci 0.3 Documentation</title>
+        
+
+        
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+        <link rel="stylesheet" href="css/pygments-default.css">
+
+        <!-- Google analytics script -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-32518208-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-fixed-top" id="topbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="brand" style="width:200px;"/><a href="index.html">
+                      <img src="img/logo.svg" style="width:130px; height:48px;margin-left: 25px;"/></a>
+                      <!-- <span class="version">0.3</span> -->
+                    </div>
+                    <ul class="nav">
+                        <li><a href="index.html">概述</a></li>
+                        <li><a href="quickStart.html">快速开始</a></li>
+
+                        <li class="dropdown">
+                            <a href="quickStart.html#" class="dropdown-toggle" data-toggle="dropdown">使用教程<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="concept.html">基本概念</a></li>
+                                <li><a href="project_org_team_user_auth_guide.html">用户与权限体系</a></li>
+                                <li><a href="source_guide.html">数据源管理</a></li>
+                                <li><a href="view_guide.html">数据视图管理</a></li>
+                                <li><a href="widget_guide.html">可视组件管理</a></li>
+                                <li><a href="dashboard_guide.html">仪表板管理</a></li>
+                                <li><a href="display_guide.html">大屏管理</a></li>
+                                <li><a href="schedule_guide.html">定时任务管理</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="integration_guide.html">集成整合</a></li>
+                        <li class="dropdown">
+                            <a href="quickStart.html#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="FAQ.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-wrapper">
+            <div class="content" id="content">
+                
+                    <h1 class="title">第一个应用</h1>
+                
+
+                <p>我们先来实现第一个应用。如果某一步不会操作，别担心，你可以到后面的章节中找对应的介绍。</p>
+
+<p><strong>注册</strong></p>
+
+<p>Davinci 0.3 需要用户自己注册系统账号，注册前确保邮件服务器已正确配置。填写真实的邮箱地址，用于接收注册邮件，密码不需要为邮箱对应的密码。点击注册后，到对应的邮箱中激活。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/quickstart_login_up.png" alt="quickStart_register" /></p>
+
+<p><strong>登录</strong></p>
+
+<p><img src="https://edp963.github.io/davinci/img/quickstart_login_in.png" alt="quickStart_login" /></p>
+
+<p><strong>创建 Project</strong></p>
+
+<p>登录成功后，系统默认分配一个组织，你能在该组织下创建项目。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/user_org_add_pro.png" alt="user_org_add_pro" /></p>
+
+<p><strong>创建 Widget</strong></p>
+
+<p>进入项目。创建 Widget 之前，确认导入了数据源并建立了合理的视图。</p>
+
+<ol>
+  <li>
+    <p>在 Widget 列表，点击右上角“新增”。</p>
+  </li>
+  <li>
+    <p>进入 Widget 编辑页，选择数据驱动模式以及想要的展示方式，并进行简单的图表配置，点击“保存”并退出。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/widget_per1.png" alt="widget_per1" /></p>
+  </li>
+</ol>
+
+<p><strong>创建 Viz</strong></p>
+
+<p>进入 Viz 页，创建 Dashboard 和 Display 应用层。</p>
+
+<p><img src="https://edp963.github.io/davinci/img/dashboard_viz_add.jpg" alt="dashboard_viz_add" /></p>
+
+<p><strong>创建 Dashboard</strong></p>
+
+<ol>
+  <li>
+    <p>进入 Dashboard 应用层，新建 Dashbord 菜单项，再点击右上角“新增”。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/quickstart_dashboard2.png" alt="quickstart_dashboard2" /></p>
+  </li>
+  <li>
+    <p>弹窗是所有可供选择的 Widget，选中一个或多个 Widget，点击“下一 步”。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/quickstart_dashboard3.png" alt="quickstart_dashboard4" /></p>
+  </li>
+  <li>
+    <p>配置数据刷新模式，保存，选中的 Widget 就被添加到对应的 Dashboard 了。你还可以进一步编辑和移动 Widget，拖拽出自己喜欢的排列方式。</p>
+  </li>
+</ol>
+
+<p>这样我们的第一个 Dashboard（仪表板）就创建完成了。</p>
+
+<p><strong>创建</strong> <strong>Display</strong></p>
+
+<ol>
+  <li>
+    <p>进入 Display，点击顶部菜单的 “Widgets”。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/quickstart_diaplay1.png" alt="quickstart_diaplay1" /></p>
+  </li>
+  <li>
+    <p>与 Dashboard 类似，弹窗选择 Widget，点击“下一 步”。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/quickstart_display2.png" alt="quickstart_display2" /></p>
+  </li>
+  <li>
+    <p>配置数据刷新模式，保存，选中的 Widget 就被添加到对应的 Display 了。你能够自由地编辑和移动 Widget，拖拽和配置出自己喜欢的样式。</p>
+
+    <p><img src="https://edp963.github.io/davinci/img/quickstart_display5.png" alt="quickstart_display5" /></p>
+  </li>
+</ol>
+
+<p>这样我们的第一个 Display（大屏）就创建完成了。</p>
+
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.8.0.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/anchor.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

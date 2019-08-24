@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Overview - Davinci 0.3 Documentation</title>
+        
+          <meta name="description" content="Davinci DAVINCI_VERSION_SHORT Documentation Homepage">
+        
+
+        
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+        <link rel="stylesheet" href="css/pygments-default.css">
+
+        <!-- Google analytics script -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-32518208-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-fixed-top" id="topbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="brand" style="width:200px;"/><a href="index.html">
+                      <img src="img/logo.svg" style="width:130px; height:48px;margin-left: 25px;"/></a>
+                      <!-- <span class="version">0.3</span> -->
+                    </div>
+                    <ul class="nav">
+                        <li><a href="index.html">概述</a></li>
+                        <li><a href="quickStart.html">快速开始</a></li>
+
+                        <li class="dropdown">
+                            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">使用教程<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="concept.html">基本概念</a></li>
+                                <li><a href="project_org_team_user_auth_guide.html">用户与权限体系</a></li>
+                                <li><a href="source_guide.html">数据源管理</a></li>
+                                <li><a href="view_guide.html">数据视图管理</a></li>
+                                <li><a href="widget_guide.html">可视组件管理</a></li>
+                                <li><a href="dashboard_guide.html">仪表板管理</a></li>
+                                <li><a href="display_guide.html">大屏管理</a></li>
+                                <li><a href="schedule_guide.html">定时任务管理</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="integration_guide.html">集成整合</a></li>
+                        <li class="dropdown">
+                            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="FAQ.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-wrapper">
+            <div class="content" id="content">
+                
+                    <h1 class="title">Davinci 概述</h1>
+
+<h2 id="1-平台介绍">1 平台介绍</h2>
+
+<p>Davinci 是一个 DVAAS（Data Visualization as a Service）平台解决方案，面向业务人员/数据工程师/数据分析师/数据科学家，致力于提供一站式数据可视化解决方案。既可作为公有云/私有云独立部署使用，也可作为可视化插件集成到三方系统。用户只需在可视化 UI 上简单配置即可服务多种数据可视化应用，并支持高级交互/行业分析/模式探索/社交智能等可视化功能。</p>
+
+<h2 id="2-模块架构">2 模块架构</h2>
+
+<p><img src="https://edp963.github.io/davinci/img/overview_architecture.jpg" alt="overview_architecture" /></p>
+
+<h2 id="3-设计理念">3 设计理念</h2>
+
+<ul>
+  <li><strong>围绕 View（数据视图）与 Widget（可视组件）两个核心概念设计</strong>
+    <ul>
+      <li>View 是数据的结构化形态，一切逻辑/权限/服务等相关都是从 View 展开。</li>
+      <li>Widget 是数据的可视化形态，一切展示/交互/引导等都是从 Widget 展开。</li>
+      <li>作为数据的两种不同形态，二者相辅相成，让用户拥有一致的体验和认识。</li>
+    </ul>
+  </li>
+  <li><strong>强化集成定制能力和智能社交能力</strong>
+    <ul>
+      <li>集成定制能力指无缝集成到三方系统，并提供强大的定制化能力，使其和三方系统融为一体。</li>
+      <li>社交智能能力指共享优秀的数据可视化思想，激发用户对数据可视化表达能力和艺术美感的追求，同时也使 Davinci 更加智能的引导和提高用户的数据可视化能力。</li>
+      <li>在数据可视化领域里，Davinci 重视基础的交互能力和多种多样的图表选择能力，同时更加重视集成定制能力和社交智能能力。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="4-功能特点">4 功能特点</h2>
+
+<ul>
+  <li><strong>数据源</strong>
+    <ul>
+      <li>支持多种 JDBC 数据源</li>
+      <li>支持 CSV 数据文件上传</li>
+    </ul>
+  </li>
+  <li><strong>数据模型</strong>
+    <ul>
+      <li>支持友好 SQL 编辑器进行数据处理和转换</li>
+      <li>支持自动和自定义数据模型设计和共享</li>
+    </ul>
+  </li>
+  <li><strong>可视化组件</strong>
+    <ul>
+      <li>支持基于数据模型拖拽智能生成可视化组件</li>
+      <li>支持各种可视化组件样式配置</li>
+      <li>支持自由分析能力</li>
+    </ul>
+  </li>
+  <li><strong>数据门户</strong>
+    <ul>
+      <li>支持基于可视化组件创建可视化仪表板</li>
+      <li>支持可视化组件自动布局</li>
+      <li>支持可视化组件全屏显示、本地控制器、高级过滤器、组件间联动、群控控制器可视组件</li>
+      <li>支持可视化组件大数据量展示分页和滑块</li>
+      <li>支持可视化组件 CSV 数据下载、公共分享授权分享以及可视化仪表板的公共分享和授权分享</li>
+      <li>支持基于可视化仪表板创建数据门户</li>
+    </ul>
+  </li>
+  <li><strong>数据大屏</strong>
+    <ul>
+      <li>支持可视化组件自由布局</li>
+      <li>支持图层、透明度设置、边框、背景色、对齐、标签等更丰富大屏美化功能</li>
+      <li>支持多种屏幕自适应方式</li>
+    </ul>
+  </li>
+  <li><strong>用户体系</strong>
+    <ul>
+      <li>支持多租户用户体系</li>
+      <li>支持每个用户自建一整套组织架构层级结构</li>
+      <li>支持浅社交能力</li>
+    </ul>
+  </li>
+  <li><strong>安全权限</strong>
+    <ul>
+      <li>支持 LDAP 登录认证</li>
+      <li>支持动态 Token 鉴权</li>
+      <li>支持细粒度操作权限矩阵配置</li>
+      <li>支持数据列权限、行权限</li>
+    </ul>
+  </li>
+  <li><strong>集成能力</strong>
+    <ul>
+      <li>支持安全 URL 嵌入式集成</li>
+      <li>支持 JS 融入式集成</li>
+    </ul>
+  </li>
+  <li><strong>多屏适应</strong>
+    <ul>
+      <li>支持大屏、PC、Pad、手机移动端等多屏自适应</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="5-场景支持">5 场景支持</h2>
+
+<ul>
+  <li>
+    <p><strong>安全多样自助交互式报表</strong></p>
+
+    <p>一次配置即可实现可视组件高级过滤、高级控制、联动、钻取、下载、分享等，帮助业务人员快速完成对比、地理分析、分布、趋势以及聚类等分析和决策。</p>
+
+    <p>自动布局的 Dashboard（仪表板），适用于大多数通过快速配置即可查看和分享的可视化报表。</p>
+
+    <p>自由布局的 Display（大屏），适用于一些特定的、需要添加额外修饰元素的、长时间查看的场景，通常配置这类场景需要花一定的时间和精力，如“双11”大屏。</p>
+  </li>
+  <li>
+    <p><strong>实时运营监控</strong></p>
+
+    <p>实时观察运营状态，衔接各个环节流程，对比检测异常情况，处理关键环节问题。</p>
+
+    <p>透视驱动与图表驱动两种图表配置模式，满足不同的应用场景需求。</p>
+  </li>
+  <li>
+    <p><strong>快速集成</strong></p>
+
+    <p>分享链接、IFRAME 或调用开发接口，方便快捷地集成到三方系统，并能够支撑二次开发与功能拓展，充分适应不同业务人员的个性化需求，快速打造属于自己的数据可视化平台。</p>
+  </li>
+</ul>
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.8.0.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/anchor.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
